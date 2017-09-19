@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Weather from './containers/weather'
+import Containers from './containers'
 import logo from './logo.svg';
 import {Provider} from 'react-redux'
 import { store } from './redux'
@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Weather />
+        <Containers />
       </Provider>
     );
   }

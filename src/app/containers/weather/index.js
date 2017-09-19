@@ -13,14 +13,13 @@ class Weather extends Component {
     }
   }
   componentDidMount() {
-    console.log(process.env)
     this.props.getWeather()
   }
 
   render() {
     return (
       <div className="weather-container">
-        {JSON.stringify(this.props.weather,null,2)}
+        {/*JSON.stringify(this.props.weather,null,2)*/}
       </div>
     )
   }
