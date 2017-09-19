@@ -14,31 +14,23 @@ class Weather extends Component {
   }
   componentDidMount() {
     console.log(process.env)
-    WeatherService.get_weather().then((weather)=>{
-      this.setState({weather})
-      console.log('in then')
-      console.log(weather)
-    })
+    this.props.getWeather()
   }
 
   render() {
     return (
       <div className="weather-container">
-        {JSON.stringify(this.state.weather,null,2)}
+        {JSON.stringify(this.props.weather,null,2)}
       </div>
     )
   }
 }
 
-function mapStateToProps(state){
-  return {
-    weather: state.weather
-  }
-}
-function mdtp(dispatch, props){
+const MSTP = ({weather}) => ({weather})
+function mdtp(dispatch){
   return {
     getWeather: ()=>dispatch(get_weather())
   }
 }
 
-export default connect(mapStateToProps,mdtp)(Weather)
+export default connect(MSTP,mdtp)(Weather)

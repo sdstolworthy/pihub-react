@@ -14,11 +14,12 @@ export function set_weather(weather) {
   }
 }
 
+// == THUNK ACTIONS
+
 export function get_weather() {
   return (dispatch) => {
     return WeatherService.get_weather().then(weather=>{
       dispatch(set_weather(weather))
-
     })
   }
 }
