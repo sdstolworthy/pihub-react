@@ -19,7 +19,6 @@ export function set_news(news) {
 export function get_news() {
   return (dispatch) => {
     return NewsService.get_news().then(news=>{
-      console.log('NEWS:',news)
       dispatch(set_news(news))
     })
   }
